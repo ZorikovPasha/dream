@@ -34,8 +34,8 @@ for (let i = 0; i < 100; i++) {
   const productUnit = Math.random() < 0.5 ? "2л" : "3шт"; // случайный выбор между "2л" и "3шт"
 
   productsMock.push({
-    id: i,
-    subcategory_id: subcategoryId,
+    id: i.toString(),
+    subcategory_id: subcategoryId.toString(),
     image: "https://mechta-crimea.ru/test/img/preview-product/1.png",
     name: productName,
     unit: productUnit,

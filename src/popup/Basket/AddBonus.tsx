@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {useAppDispatch, useAppSelector} from "../../store/storeHooks.ts";
-import {selectBasketProduct, selectCurrentBasketBonus, selectMe, setCurrentBasketBonus} from "../../store/slices/authSlice.ts";
+import {selectBasketProduct, selectMe, setCurrentBasketBonus} from "../../store/slices/authSlice.ts";
 
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 const AddBonus = (props: Props) => {
     const {close, goTo} = props;
     const dispatch = useAppDispatch();
-    const [bonus, setBonus] = useState<number>(0);
+    const [bonus, setBonus] = useState(0);
     const [error, setError] = useState(false);
     // const [updMe] = useUpdateMeMutation();
     const basketProduct = useAppSelector(selectBasketProduct);

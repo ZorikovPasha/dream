@@ -33,11 +33,19 @@ export default CategoryProduct
 export const getServerSideProps: GetServerSideProps<IProps> = async ({ query }) => {
   const formattedQuery = Array.isArray(query.id) ? query.id[0] : query.id
 
-  const products = await publicApiClient.getProductsByCategory(formattedQuery ?? "")
-
-  return {
-    props: {
-      products
+  try {
+    const products = await publicApiClient.getProductsByCategory(formattedQuery ?? "")
+    return {
+      props: {
+        products
+      }
+    }
+      
+  } catch (error) {
+    return {
+      props: {
+        products: []
+      }
     }
   }
 }

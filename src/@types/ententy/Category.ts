@@ -1,9 +1,14 @@
 import { Product } from "./Product";
 
 export type Category = {
-  id: string;
+  id: number;
   name: string;
-  parent_id: null | string;
-  products: Product[]
-  children: Category[];
+  parent_id?: string;
+  products?: Product[]
+  icon: string
+  children?: Category[];
+  subcategories: {
+    id: number
+    name: string
+  }[]
 };

@@ -1,5 +1,3 @@
-import { PromocodeDto } from "../../@types/ententy/Promocode"
-
 type Props = {
   bonus: number
 }

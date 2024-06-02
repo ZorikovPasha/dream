@@ -71,6 +71,9 @@ export const getStaticProps: GetStaticProps<IProps> = async () => {
     const sliderImages = await publicApiClient.getMainpageSliderImage()
     const categories = await publicApiClient.getCategories()
     
+    console.log("sliderImages", sliderImages);
+    console.log("categories", categories);
+    
     return {
       props: {
         sliderImages: Array.isArray(sliderImages) ? sliderImages  : [],

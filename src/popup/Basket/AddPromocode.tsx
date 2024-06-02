@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { useAppSelector } from "../../store/storeHooks.ts";
-import { selectBasketProduct } from "../../store/slices/authSlice.ts";
 import { useGetPromocodeMutation } from "../../api/orderApi.ts";
 
 type Props = {

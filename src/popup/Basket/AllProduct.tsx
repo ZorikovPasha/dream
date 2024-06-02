@@ -1,4 +1,4 @@
-import { selectBasketProduct, selectMobile } from "../../store/slices/authSlice";
+import { selectBasketProduct } from "../../store/slices/authSlice";
 import { useAppDispatch, useAppSelector } from "../../store/storeHooks";
 import { pushToBasket, decreaseCountAndRemoveIfZero } from "../../store/slices/authSlice";
 import { Product } from "../../@types/ententy/Product";
@@ -36,7 +36,7 @@ const AllProduct = (props: Props) => {
               return (
                 <div key={index} className="basket-product" data-product-basket-id="1">
                   <div className="basket-product__container">
-                    <div className="basket-product__col basket-product__col--left"><a className="basket-product__link" href="#" title=""><img className="basket-product__img" src={item.products.img} alt="" /></a></div>
+                    <div className="basket-product__col basket-product__col--left"><a className="basket-product__link" href="#" title=""><img className="basket-product__img" src={item.products.image} alt="" /></a></div>
                     <div className="basket-product__col basket-product__col--center">
                       <div className="basket-product__title">{item.products.name}</div>
                       <div className="basket-product__subtitle">{item.products.value + " " + item.products.measurement}</div>

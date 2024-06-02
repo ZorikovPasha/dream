@@ -1,6 +1,3 @@
-import { selectBasketProduct } from "../../store/slices/authSlice";
-import { useAppSelector } from "../../store/storeHooks";
-
 type Props = {
     close: () => void;
     goTo: (path: string) => void;
@@ -8,8 +5,7 @@ type Props = {
 
 const OrderConfirmed = (props: Props) => {
 
-    const { close, goTo } = props;
-    const basketProduct = useAppSelector(selectBasketProduct);
+    const { close } = props;
 
     return (
         <>

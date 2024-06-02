@@ -9,7 +9,7 @@ type Props = {
 }
 
 const OrderDetail = (props: Props) => {
-  const { close, goTo } = props;
+  const { close } = props;
   const currentOrder = useAppSelector(selectOrder)
 
   const date = currentOrder && new Date(currentOrder?.createdAt).toLocaleString('ru-RU', {

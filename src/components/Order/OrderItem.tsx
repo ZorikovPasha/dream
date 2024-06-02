@@ -52,7 +52,7 @@ const OrderItem = ({ order, onPress }: Props) => {
             const item = order.orderProducts[index];
             return item ? (
               <div key={index} className="profile__order-item-img-wrapper">
-                <img className="profile__order-item-img" src={item.product.img} alt="" />
+                <img className="profile__order-item-img" src={item.product.image} alt="" />
               </div>
             ) : (
               <div key={index} className="profile__order-item-img-wrapper"></div>

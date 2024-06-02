@@ -37,7 +37,7 @@ const OrderConfirmed = (props: Props) => {
                             {
                                 basketProduct.map((item, index) => (
                                     <a className="basket__offer-img-link" href="#" key={index}>
-                                        <img className="basket__offer-img" src={item.products.img} />
+                                        <img className="basket__offer-img" src={item.products.image} />
                                     </a>
                                 ))
                             }

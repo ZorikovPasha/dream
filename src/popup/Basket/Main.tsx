@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
-import { selectBasketProduct, selectCurrentBasketBonus, selectMe, selectMobile, selectPromocode } from "../../store/slices/authSlice";
-import { useAppDispatch, useAppSelector } from "../../store/storeHooks";
+import { useEffect } from "react";
+import { selectBasketProduct, selectCurrentBasketBonus, selectMe, selectPromocode } from "../../store/slices/authSlice";
+import { useAppSelector } from "../../store/storeHooks";
 import PromocodeContainer from "../../components/Basket/PromocodeContainer";
-import { PromocodeDto } from "../../@types/ententy/Promocode";
 import BonusContainer from "../../components/Basket/BonusContainer";
 import { useCreateOrderMutation } from "../../api/orderApi";
-import { setCurrentOrder } from "../../store/slices/orderSlice";
 
 type Props = {
   close: () => void;
@@ -20,7 +18,6 @@ const Main = (props: Props) => {
   const currentPromocode = useAppSelector(selectPromocode);
   const currentBasketBonus = useAppSelector(selectCurrentBasketBonus);
   const me = useAppSelector(selectMe)
-  const dispatch = useAppDispatch();
   const press = () => {
 
     const orderProducts = basketProduct.map((item) => {
@@ -65,7 +62,7 @@ const Main = (props: Props) => {
               {
                 basketProduct.map((item, index) => (
                   <a className="basket__offer-img-link" href="#" key={index}>
-                    <img className="basket__offer-img" src={item.products.img} />
+                    <img className="basket__offer-img" src={item.products.image} />
                   </a>
                 ))
               }
