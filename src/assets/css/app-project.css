@@ -4058,6 +4058,8 @@ select option {
   min-height: 36px;
   cursor: pointer;
   transition: background-image 0.24s ease-in-out;
+  border-radius: 50%;
+  border: none;
 }
 
 @media (max-width: 1040px) {
@@ -8025,6 +8027,11 @@ select option {
   opacity: 1;
   transition: opacity 0.2s ease;
   will-change: opacity;
+}
+
+.profile__nav-item--plain {
+  background-color: transparent;
+  border: none;
 }
 
 .profile__nav--small .profile__nav-item {

@@ -1,3 +1,4 @@
+import React from "react"
 import { selectMe } from "../../store/slices/authSlice";
 import { useAppSelector } from "../../store/storeHooks";
 
@@ -5,7 +6,6 @@ type Props = {
   close: () => void;
   goTo: (path: string) => void;
 }
-
 
 const Settings = (props: Props) => {
   const { close, goTo } = props;
@@ -15,7 +15,7 @@ const Settings = (props: Props) => {
       <div className="popup__row popup__row--title">
         <div onClick={() => goTo('main')} className="popup__btn popup__btn--back"></div>
         <div className="popup__title">Настройки</div>
-        <div onClick={close} className="popup__btn popup__btn--close"></div>
+        <button type="button" className="popup__btn popup__btn--close" onClick={close}></button>
       </div>
       <div className="popup__row popup__row--profile">
         <div className="profile profile--settings">
@@ -32,10 +32,10 @@ const Settings = (props: Props) => {
                 <span className="icon icon--email"></span>
                 <span>{me?.email || "Добавить почту"}</span>
               </a>
-              <a className="profile__nav-item" href="#">
+              <button className="profile__nav-item profile__nav-item--plain" type="button" onClick={() => goTo("adjustNotifications")}>
                 <span className="icon icon--bell"></span>
                 <span>Настроить уведомления</span>
-              </a>
+              </button>
             </div>
             <div className="profile__btn profile__btn--remove-account">Удалить аккаунт</div>
           </div>

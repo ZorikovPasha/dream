@@ -10,8 +10,6 @@ interface IProps {
 }
 
 const Home = ({ sliderImages, categories }: IProps) => {
-  console.log("sliderImages", sliderImages)
-  console.log("categories", categories)
   return (
     <>
       <Head>
@@ -76,7 +74,7 @@ export const getStaticProps: GetStaticProps<IProps> = async () => {
     
     return {
       props: {
-        sliderImages: Array.isArray(sliderImages) ? sliderImages  : [],
+        sliderImages: Array.isArray(sliderImages.images) ? sliderImages.images  : [],
         categories: Array.isArray(categories) ? categories  : [],
       },
       revalidate: 60

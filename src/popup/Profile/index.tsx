@@ -12,6 +12,7 @@ import { useGetMyOrdersQuery } from "../../api/orderApi";
 import { useAppSelector } from "../../store/storeHooks";
 import { selectMe } from "../../store/slices/authSlice";
 import OrderDetail from "./OrderDetail";
+import { AdjustNotifications } from "./AdjustNotifications";
 
 type Props = {
   isOpen: boolean,
@@ -19,7 +20,6 @@ type Props = {
 }
 
 const Profile = (props: Props) => {
-
   const { isOpen, close } = props;
   const me = useAppSelector(selectMe)
   useGetMyOrdersQuery(me?.id);
@@ -48,7 +48,9 @@ const Profile = (props: Props) => {
       case 'addMail':
         return <AddMail close={closePress} goTo={setCurrentState} />
       case 'orderDetail':
-        return <OrderDetail close={closePress} goTo={setCurrentState}/>
+        return <OrderDetail close={closePress} goTo={setCurrentState} />
+      case "adjustNotifications":
+      return <AdjustNotifications close={closePress} goTo={setCurrentState} />
       default:
         break;
     }

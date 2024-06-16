@@ -54,7 +54,7 @@ class UserApi extends Api {
   }
 
   getMainpageSliderImage = () => {
-    return this.get<string[]>('/mainPage/sliderImage')
+    return this.get<{ images: string[] }>('/mainPage/sliderImage')
   }
   getCategories = () => {
     return this.get<ICategoryCard[]>('/mainPage/categoryItems')
